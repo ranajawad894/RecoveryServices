@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noman Recovery Services | Premium Towing UAE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        :root {
+            --primary: #FFD700;
+            /* Gold */
+            --primary-gradient: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+            --dark: #0a0a0a;
+            --dark-overlay: rgba(0, 0, 0, 0.75);
+            --light: #f4f4f4;
+            --grey: #aaa7a7;
+            --whatsapp: #25D366;
+            --phone: #007bff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* --- Modern Navigation --- */
+        header {
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        /* Class added via JS on scroll */
+        header.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 5%;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            font-size: 1rem;
+        }
+
+        /* Underline Hover Animation */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-btn {
+            background: var(--primary-gradient);
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: var(--dark) !important;
+            font-weight: 700 !important;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: transform 0.3s !important;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-btn::after {
+            display: none;
+        }
+
+        /* Remove underline for button */
+
+        /* --- Attractive Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            /* Modern Slanted Cut at bottom */
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://trela.ae/wp-content/uploads/2024/08/%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA-%D9%85%D9%86-%D8%A7%D9%84%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA-%D8%B3%D8%B7%D8%AD%D8%A9-%D9%88%D9%86%D8%B4.gif');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+            animation: slowZoom 20s infinite alternate;
+            /* Alive effect */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Sophisticated dark gradient */
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.9) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 900;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: #e0e0e0;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .hero-btn {
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+        }
+
+        .btn-gold {
+            background: var(--primary-gradient);
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: black;
+            border-color: white;
+        }
+
+        /* --- Services --- */
+        .services {
+            padding: 100px 10%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .section-header .line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: var(--primary-gradient);
+            z-index: -1;
+            transition: 0.4s;
+            border-radius: 20px;
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover h3,
+        .service-card:hover p,
+        .service-card:hover i {
+            color: black;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: #FDB931;
+            margin-bottom: 25px;
+            transition: 0.4s;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* === 2. NEW SWIPER GALLERY STYLES === */
+        .gallery-section {
+            padding: 80px 5%;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .swiper {
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 50px;
+            max-width: 1200px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            /* Shadow for depth */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .swiper-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Caption inside slide */
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            text-align: left;
+        }
+
+        .slide-caption h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Customizing Swiper Arrows to match Gold Theme */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--primary) !important;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px !important;
+            font-weight: bold;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--primary) !important;
+        }
+
+        /* --- Features/Why Us --- */
+        .features {
+            background-color: var(--light);
+            color: rgb(21, 21, 21);
+            padding: 80px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 250px;
+            margin: 20px;
+        }
+
+        .feature-item i {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer & Sticky --- */
+        footer {
+            background: #111;
+            color: #ccc;
+            padding: 60px 10% 20px;
+            border-top: 5px solid var(--primary);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Social Icons Styles */
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a.fb:hover {
+            background: var(--facebook);
+        }
+
+        .social-links a.wa:hover {
+            background: var(--whatsapp);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* --- Sticky Buttons --- */
+        .sticky-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .float-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            z-index: -1;
+            animation: pulseWave 2s infinite;
+        }
+
+        .float-call {
+            background: var(--phone);
+        }
+
+        .float-wa {
+            background: var(--whatsapp);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Animations --- */
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseWave {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        /* Mobile Tweaks */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            .service-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="navbar">
+        <div class="logo"><img src="\Logo.png" style="max-height:40px;"> <i class="fas fa-truck-tow"></i><span>Noman
+            </span>Recovery<span>Services</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="tel:+971505719092" class="nav-btn">Call Now</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <span class="tagline">One of the best Recovery Service in UAE</span>
+            <h1>We Don't Just Tow.<br><span>We Rescue.</span></h1>
+            <p>Stuck on the road? Noman Recovery Services provides premium towing and roadside assistance 24/7. Fast.
+                Safe.
+                Professional.</p>
+
+            <div class="cta-group">
+                <a href="tel:+971505719092" class="hero-btn btn-gold">
+                    <i class="fas fa-phone-alt"></i> +971 50 571 9092
+                </a>
+                <a href="https://wa.me/971505719092" class="hero-btn btn-outline">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Premium Services</h2>
+            <div class="line"></div>
+            <p>Expert handling for all vehicle types.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-truck-pickup service-icon"></i>
+                <h3>Flatbed Recovery</h3>
+                <p>Damage-free transportation for luxury cars, sports cars, and SUVs. We treat your car like our own.
+                </p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-car-battery service-icon"></i>
+                <h3>Roadside Assistance</h3>
+                <p>Dead battery? Flat tire? Out of fuel? We arrive equipped to fix the problem on the spot.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-car-crash service-icon"></i>
+                <h3>Accident Recovery</h3>
+                <p>Quick response team to handle accident scenes and recover your vehicle safely.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tools service-icon"></i>
+                <h3>Breakdown Service</h3>
+                <p>Mechanical breakdown support anywhere in the UAE. Just one call away.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-life-ring service-icon"></i>
+                <h3>Tyre Change</h3>
+                <p>Flat or burst tyre? We provide quick on-site tyre changing services to get you rolling again.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-gas-pump service-icon"></i>
+                <h3>Petrol & Diesel Refill</h3>
+                <p>Run out of fuel? We deliver petrol or diesel directly to your location so you can reach the station.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-motorcycle service-icon"></i>
+                <h3>Bike Towing</h3>
+                <p>Specialized recovery trucks with secure mounting systems for motorcycles and superbikes.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-mountain service-icon"></i>
+                <h3>Sand Recovery</h3>
+                <p>Stuck in the desert sand? Our 4x4 off-road experts will pull your vehicle out efficiently.</p>
+            </div>
+
+            <div class="service-card">
+                <i class="fas fa-warehouse service-icon"></i>
+                <h3>Basement Towing</h3>
+                <p>Low-clearance recovery trucks designed specifically to extract vehicles from underground parking.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <div class="section-header">
+            <h2>Recent Operations</h2>
+            <div class="line"></div>
+            <p>See our team in action across the UAE.</p>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="/Safe.jpeg" alt="Towing Service">
+                    <div class="slide-caption">
+                        <h4>Safe Towing</h4>
+                        <p>Secure flatbed transport.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="/Lux.jpeg" alt="Luxury Car">
+                    <div class="slide-caption">
+                        <h4>Luxury Recovery</h4>
+                        <p>Handling sports cars with care.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Engine Fix">
+                    <div class="slide-caption">
+                        <h4>Roadside Fix</h4>
+                        <p>On-spot battery & tire changes.</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="/Night.jpeg" alt="Night Recovery">
+                    <div class="slide-caption">
+                        <h4>24/7 Service</h4>
+                        <p>We work day and night.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-clock"></i>
+            <h3>24/7 Available</h3>
+            <p>We work round the clock.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-tachometer-alt"></i>
+            <h3>Fast Response</h3>
+            <p>We arrive in less than 30 minutes.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>Best Rates</h3>
+            <p>Affordable and transparent pricing.</p>
+        </div>
+    </section>
+
+    <div class="sticky-buttons">
+        <a href="https://wa.me/971505719092" class="float-btn float-wa">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+971505719092" class="float-btn float-call">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Noman Recovery Services</h3>
+                <p>Professional towing and recovery services available 24/7 across the UAE. Trust us to get you back
+                    on the road.</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Address</h3>
+                <p> <i class="fa fa-map-marker" style="color:var(--primary)"></i> 324 Damascus Street, Al Qusais Ind.
+                    Second, Dubai, UAE
+                </p>
+            </div>
+            <div class=" footer-col">
+                <h3>Contact Us</h3>
+                <p>
+                    <a href="tel:+971505719092" style="text-decoration: none; color: inherit;">
+                        <i class="fas fa-phone-alt" style="color:var(--primary)"></i> +971 50 571 9092
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:info@nomanrecoveryservices.online" style="text-decoration: none; color: inherit;">
+                        <i class="fa fa-envelope" style="color:var(--primary)"></i> info@nomanrecoveryservices.online
+                    </a>
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Social Links</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61585179606033" target="_blank" class="fb">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/971505719092" target="_blank" class="wa">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2025 Noman Recovery Services. All rights reserved.</p>
+            <p>Designed with ❤️ by
+                <a href="https://wa.me/923433315082" target="_blank"
+                    style="text-decoration: none; color: var(--primary); font-weight: bold;">
+                    <i class="fab fa-whatsapp"></i> Jawad Akram
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            // Responsive Breakpoints
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 50,
+                },
+            },
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
